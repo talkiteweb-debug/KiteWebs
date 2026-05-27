@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KiteWeb · Websites for Small Businesses in Israel · ₪990 · 24 Hours</title>
+  <meta name="description" content="KiteWeb builds professional websites for small businesses in Israel. Live in 24 hours. ₪990 one-time, ₪49/month. No surprises, no hidden fees. Hebrew & English support." />
+  <meta name="theme-color" content="#0EA5E9" />
+
+  <link rel="alternate" hreflang="he" href="/" />
+  <link rel="alternate" hreflang="en" href="/en/" />
+  <link rel="alternate" hreflang="x-default" href="/" />
+
+  <meta property="og:title" content="KiteWeb · Your business, online in 24 hours" />
+  <meta property="og:description" content="Professional websites for Israeli small businesses. ₪990 one-time, ₪49/month. Live in 24 hours." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M20 4 L36 20 L20 36 L4 20 Z' fill='%230EA5E9'/%3E%3Cpath d='M20 4 L20 36 M4 20 L36 20' stroke='white' stroke-width='1.5'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #FAFAFA;
+      --bg-soft: #F0F9FF;
+      --surface: #FFFFFF;
+      --ink: #0F172A;
+      --ink-soft: #475569;
+      --ink-mute: #94A3B8;
+      --border: #E2E8F0;
+      --border-strong: #CBD5E1;
+      --primary: #0EA5E9;
+      --primary-dark: #0284C7;
+      --primary-light: #E0F2FE;
+      --secondary: #6366F1;
+      --accent: #FBBF24;
+      --green: #10B981;
+      --red: #EF4444;
+      --radius: 14px;
+      --radius-lg: 20px;
+      --shadow-sm: 0 1px 2px rgba(15,23,42,0.04), 0 1px 3px rgba(15,23,42,0.06);
+      --shadow-md: 0 4px 6px -1px rgba(15,23,42,0.06), 0 2px 4px -2px rgba(15,23,42,0.04);
+      --shadow-lg: 0 24px 48px -12px rgba(15,23,42,0.18);
+      --shadow-xl: 0 32px 64px -16px rgba(15,23,42,0.22);
+    }
+    body.hc-mode { --bg: #FFFFFF; --bg-soft: #FFFFFF; --ink: #000; --ink-soft: #000; --border: #000; --primary: #0050C8; --primary-dark: #003480; --secondary: #0050C8; }
+    body.highlight-links a { text-decoration: underline !important; }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; }
+
+    .skip-link { position: absolute; top: -40px; left: 16px; background: var(--ink); color: white; padding: 10px 16px; border-radius: 8px; z-index: 1000; font-weight: 700; }
+    .skip-link:focus { top: 16px; }
+    :focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+    /* TOPBAR */
+    .topbar { background: var(--ink); color: #CBD5E1; font-size: 13px; padding: 9px 0; }
+    .topbar-inner { max-width: 1160px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .topbar-info { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
+    .topbar-item { display: inline-flex; align-items: center; gap: 6px; color: #E2E8F0; transition: color 0.15s; }
+    .topbar-item:hover { color: white; }
+    .topbar-item svg { opacity: 0.7; }
+    .topbar-promise { color: var(--accent); font-weight: 600; }
+    @media (max-width: 640px) { .topbar-info { gap: 14px; } .topbar-promise { display: none; } }
+
+    /* NAV */
+    nav { position: sticky; top: 0; z-index: 50; background: rgba(250,250,250,0.88); backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px); border-bottom: 1px solid var(--border); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; max-width: 1160px; margin: 0 auto; }
+    .logo { display: flex; align-items: center; gap: 10px; font-weight: 900; font-size: 21px; letter-spacing: -0.01em; }
+    .logo-mark { width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; }
+    .nav-links { display: flex; gap: 24px; align-items: center; font-size: 15px; color: var(--ink-soft); }
+    .nav-link { padding: 6px 2px; transition: color 0.15s; font-weight: 500; }
+    .nav-link:hover { color: var(--ink); }
+    .nav-cta { background: var(--ink); color: white; padding: 9px 18px; border-radius: 999px; font-weight: 700; font-size: 14px; transition: transform 0.15s, background 0.15s, box-shadow 0.15s; }
+    .nav-cta:hover { background: var(--primary); transform: translateY(-1px); box-shadow: 0 8px 18px -6px rgba(14,165,233,0.4); }
+    .nav-lang { font-size: 13px; font-weight: 700; color: var(--ink-soft); padding: 4px 8px; border-radius: 6px; border: 1px solid var(--border); transition: all 0.15s; }
+    .nav-lang:hover { color: var(--ink); border-color: var(--ink); }
+    @media (max-width: 820px) { .nav-links .desktop-only { display: none; } }
+
+    /* HERO */
+    .hero { position: relative; padding: 80px 0 100px; overflow: hidden; }
+    .hero::before { content: ""; position: absolute; top: -160px; left: -240px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(14,165,233,0.20) 0%, rgba(14,165,233,0) 70%); pointer-events: none; }
+    .hero::after { content: ""; position: absolute; bottom: -240px; right: -160px; width: 540px; height: 540px; background: radial-gradient(circle, rgba(99,102,241,0.16) 0%, rgba(99,102,241,0) 70%); pointer-events: none; }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 60px; align-items: center; position: relative; z-index: 1; }
+    @media (max-width: 980px) { .hero-grid { grid-template-columns: 1fr; gap: 56px; } }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; background: white; border: 1px solid var(--border); border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--ink-soft); margin-bottom: 24px; box-shadow: var(--shadow-sm); }
+    .eyebrow .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 3px rgba(16,185,129,0.18); }
+    h1.hero-title { font-size: clamp(38px, 5.5vw, 64px); font-weight: 900; line-height: 1.05; letter-spacing: -0.025em; margin-bottom: 22px; }
+    h1.hero-title .highlight { background: linear-gradient(120deg, var(--primary) 0%, var(--secondary) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .hero-sub { font-size: clamp(17px, 1.7vw, 20px); color: var(--ink-soft); margin-bottom: 32px; max-width: 540px; line-height: 1.6; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 24px; border-radius: 12px; font-weight: 700; font-size: 16px; transition: transform 0.15s, box-shadow 0.15s, background 0.15s, color 0.15s; border: none; cursor: pointer; }
+    .btn-primary { background: var(--ink); color: white; box-shadow: var(--shadow-md); }
+    .btn-primary:hover { background: var(--primary); transform: translateY(-2px); box-shadow: 0 14px 24px -10px rgba(14,165,233,0.55); }
+    .btn-whatsapp { background: #25D366; color: white; box-shadow: var(--shadow-md); }
+    .btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 14px 24px -10px rgba(37,211,102,0.55); }
+    .btn-ghost { background: white; color: var(--ink); border: 1px solid var(--border); }
+    .btn-ghost:hover { border-color: var(--ink); transform: translateY(-1px); }
+    .hero-meta { display: flex; gap: 28px; margin-top: 38px; flex-wrap: wrap; }
+    .meta-item { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--ink-soft); font-weight: 500; }
+    .meta-item svg { color: var(--green); }
+
+    /* PREVIEW STACK */
+    .preview-stack { position: relative; min-height: 460px; }
+    .preview-card { position: absolute; background: white; border-radius: 18px; border: 1px solid var(--border); box-shadow: var(--shadow-xl); overflow: hidden; transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1); }
+    .preview-card.front { inset: 60px 8% 60px 8%; transform: rotate(2deg); z-index: 3; }
+    .preview-card.front:hover { transform: rotate(0deg) translateY(-6px); }
+    .preview-card.back-1 { inset: 20px 0 100px 24%; transform: rotate(7deg); opacity: 0.85; z-index: 1; }
+    .preview-card.back-2 { inset: 100px 24% 20px 0; transform: rotate(-5deg); opacity: 0.85; z-index: 2; }
+    @media (max-width: 980px) { .preview-stack { min-height: 380px; max-width: 480px; margin: 0 auto; } }
+    @media (max-width: 540px) { .preview-card.front { inset: 40px 6% 40px 6%; } .preview-card.back-1, .preview-card.back-2 { display: none; } }
+    .browser-bar { display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: #F8FAFC; border-bottom: 1px solid var(--border); }
+    .browser-dot { width: 9px; height: 9px; border-radius: 50%; background: #E2E8F0; }
+    .browser-dot.red { background: #FCA5A5; }
+    .browser-dot.yellow { background: #FCD34D; }
+    .browser-dot.green { background: #86EFAC; }
+    .browser-url { flex: 1; background: white; border: 1px solid var(--border); border-radius: 6px; padding: 4px 10px; font-size: 11px; color: var(--ink-mute); text-align: center; }
+    .preview-body { padding: 22px 20px; }
+    .preview-hero-title { font-size: 20px; font-weight: 900; margin-bottom: 6px; line-height: 1.2; }
+    .preview-hero-sub { font-size: 12px; color: var(--ink-soft); margin-bottom: 12px; }
+    .preview-stars { color: var(--accent); font-size: 14px; margin-bottom: 12px; }
+    .preview-stars span { color: var(--ink-mute); font-size: 11px; }
+    .preview-btn { display: inline-block; background: var(--primary); color: white; padding: 7px 14px; border-radius: 7px; font-size: 12px; font-weight: 700; }
+    .preview-photos { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5px; margin-top: 14px; }
+    .preview-photo { aspect-ratio: 1; border-radius: 5px; }
+    .preview-photo.p1 { background: linear-gradient(135deg, #FECDD3 0%, #FBCFE8 50%, #DDD6FE 100%); }
+    .preview-photo.p2 { background: linear-gradient(135deg, #BAE6FD 0%, #C7D2FE 100%); }
+    .preview-photo.p3 { background: linear-gradient(135deg, #FDE68A 0%, #FCA5A5 100%); }
+
+    /* TRUST STRIP */
+    .trust-strip { position: relative; z-index: 2; margin-top: -50px; padding: 0 24px; }
+    .trust-grid { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
+    .trust-cell { background: white; padding: 28px 22px; text-align: center; }
+    .trust-cell .num { font-size: 30px; font-weight: 900; letter-spacing: -0.02em; line-height: 1.1; background: linear-gradient(120deg, var(--primary) 0%, var(--secondary) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .trust-cell .label { font-size: 14px; color: var(--ink-soft); margin-top: 6px; }
+    @media (max-width: 720px) { .trust-grid { grid-template-columns: 1fr 1fr; } }
+
+    /* SECTIONS */
+    section.block { padding: 100px 0; }
+    section.block.alt { background: var(--bg-soft); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .section-eyebrow { display: block; color: var(--primary); font-weight: 700; font-size: 13px; letter-spacing: 0.06em; margin-bottom: 12px; text-transform: uppercase; }
+    h2.section-title { font-size: clamp(28px, 3.4vw, 42px); font-weight: 900; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 14px; }
+    .section-sub { font-size: 18px; color: var(--ink-soft); max-width: 680px; margin-bottom: 56px; line-height: 1.6; }
+
+    /* STEPS */
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    @media (max-width: 820px) { .steps { grid-template-columns: 1fr; } }
+    .step { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px 28px; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; }
+    .step:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--primary); }
+    .step-num { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: linear-gradient(135deg, var(--ink) 0%, #1E293B 100%); color: white; border-radius: 12px; font-weight: 900; font-size: 18px; margin-bottom: 20px; }
+    .step h3 { font-size: 20px; font-weight: 800; margin-bottom: 10px; }
+    .step p { color: var(--ink-soft); font-size: 15px; }
+
+    /* INCLUDED + PRICE */
+    .included-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: start; }
+    @media (max-width: 940px) { .included-grid { grid-template-columns: 1fr; gap: 40px; } }
+    .features { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 24px; }
+    @media (max-width: 540px) { .features { grid-template-columns: 1fr; } }
+    .feature { display: flex; gap: 12px; align-items: start; }
+    .check { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--primary); color: white; display: inline-flex; align-items: center; justify-content: center; font-weight: 900; font-size: 13px; margin-top: 2px; }
+    .feature-text { font-size: 16px; font-weight: 500; }
+    .feature-text small { display: block; color: var(--ink-soft); font-size: 14px; margin-top: 2px; font-weight: 400; }
+
+    .price-card { background: linear-gradient(140deg, var(--ink) 0%, #1E293B 100%); color: white; border-radius: var(--radius-lg); padding: 38px 32px; position: relative; overflow: hidden; }
+    .price-card::before { content: ""; position: absolute; top: -90px; right: -90px; width: 240px; height: 240px; background: radial-gradient(circle, rgba(14,165,233,0.40) 0%, rgba(14,165,233,0) 70%); }
+    .price-tag { display: inline-block; background: rgba(251,191,36,0.18); color: var(--accent); font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 999px; margin-bottom: 16px; letter-spacing: 0.04em; position: relative; }
+    .price-card h3 { font-size: 24px; font-weight: 900; margin-bottom: 6px; position: relative; }
+    .price-card .price-pitch { color: #CBD5E1; font-size: 15px; margin-bottom: 16px; position: relative; }
+    .price-line { display: flex; align-items: baseline; gap: 10px; margin: 18px 0 8px; position: relative; }
+    .price-amount { font-size: 60px; font-weight: 900; letter-spacing: -0.03em; line-height: 1; }
+    .price-unit { color: #CBD5E1; font-size: 16px; }
+    .price-recurring { color: #CBD5E1; font-size: 15px; margin-bottom: 22px; position: relative; }
+    .price-recurring strong { color: white; }
+    .price-card .btn-primary { background: var(--primary); width: 100%; justify-content: center; margin-top: 8px; position: relative; }
+    .price-card .btn-primary:hover { background: white; color: var(--ink); }
+    .guarantee { display: flex; gap: 10px; align-items: flex-start; margin-top: 18px; padding: 14px; background: rgba(16,185,129,0.10); border: 1px solid rgba(16,185,129,0.25); border-radius: 10px; position: relative; }
+    .guarantee-icon { width: 28px; height: 28px; background: var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; flex-shrink: 0; }
+    .guarantee-text { font-size: 13px; color: #E2E8F0; line-height: 1.5; }
+    .guarantee-text strong { color: white; }
+
+    /* COMPARE */
+    .compare-card { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); }
+    table.compare { width: 100%; border-collapse: collapse; font-size: 15px; }
+    table.compare thead th { background: #F8FAFC; padding: 18px 16px; text-align: center; font-weight: 800; color: var(--ink); font-size: 14px; border-bottom: 1px solid var(--border); }
+    table.compare thead th.us { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; }
+    table.compare thead th:first-child { text-align: left; background: white; }
+    table.compare td { padding: 16px; border-bottom: 1px solid var(--border); text-align: center; color: var(--ink-soft); }
+    table.compare td:first-child { text-align: left; color: var(--ink); font-weight: 600; }
+    table.compare td.us { background: rgba(14,165,233,0.04); color: var(--ink); font-weight: 600; }
+    table.compare tr:last-child td { border-bottom: none; }
+    .cmp-yes { color: var(--green); font-weight: 900; }
+    .cmp-no { color: var(--red); font-weight: 900; }
+    .cmp-mid { color: var(--ink-mute); }
+    @media (max-width: 720px) { table.compare { font-size: 13px; } table.compare thead th, table.compare td { padding: 12px 8px; } }
+
+    /* ADDONS */
+    .addons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    @media (max-width: 820px) { .addons { grid-template-columns: 1fr; } }
+    .addon { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 24px; transition: transform 0.2s, box-shadow 0.2s; }
+    .addon:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .addon-icon { width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, var(--primary-light) 0%, #DBEAFE 100%); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 18px; color: var(--primary-dark); }
+    .addon h4 { font-size: 18px; font-weight: 800; margin-bottom: 8px; }
+    .addon p { color: var(--ink-soft); font-size: 15px; }
+    .addon-tag { display: inline-block; margin-top: 14px; font-size: 12px; color: var(--ink-mute); font-weight: 600; }
+
+    /* ABOUT */
+    .about-grid { display: grid; grid-template-columns: 200px 1fr; gap: 40px; align-items: center; }
+    @media (max-width: 720px) { .about-grid { grid-template-columns: 1fr; gap: 24px; text-align: center; } .about-avatar { margin: 0 auto; } }
+    .about-avatar { width: 200px; height: 200px; border-radius: 24px; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 84px; font-weight: 900; letter-spacing: -0.04em; box-shadow: var(--shadow-lg); }
+    .about-content h3 { font-size: 26px; font-weight: 900; margin-bottom: 6px; }
+    .about-content .role { color: var(--primary); font-weight: 700; font-size: 14px; margin-bottom: 16px; letter-spacing: 0.04em; }
+    .about-content p { color: var(--ink-soft); margin-bottom: 14px; font-size: 17px; line-height: 1.65; }
+    .about-content .signature { font-weight: 700; color: var(--ink); margin-top: 12px; }
+
+    /* FAQ */
+    .faq-list { max-width: 820px; margin: 0 auto; }
+    .faq-item { background: white; border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; overflow: hidden; transition: border-color 0.2s, box-shadow 0.2s; }
+    .faq-item[open] { border-color: var(--primary); box-shadow: var(--shadow-md); }
+    .faq-item summary { list-style: none; padding: 22px 24px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; font-size: 17px; color: var(--ink); gap: 16px; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "+"; font-size: 24px; font-weight: 400; color: var(--primary); transition: transform 0.2s; flex-shrink: 0; }
+    .faq-item[open] summary::after { content: "−"; }
+    .faq-answer { padding: 0 24px 22px; color: var(--ink-soft); font-size: 16px; line-height: 1.7; }
+
+    /* CONTACT */
+    .final-cta { background: linear-gradient(135deg, var(--ink) 0%, #1E293B 50%, #0F172A 100%); color: white; padding: 90px 24px; position: relative; overflow: hidden; }
+    .final-cta::before { content: ""; position: absolute; top: -200px; left: -100px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(14,165,233,0.25) 0%, rgba(14,165,233,0) 70%); pointer-events: none; }
+    .final-cta::after { content: ""; position: absolute; bottom: -250px; right: -150px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(99,102,241,0.22) 0%, rgba(99,102,241,0) 70%); pointer-events: none; }
+    .final-cta-inner { max-width: 1160px; margin: 0 auto; position: relative; z-index: 1; text-align: center; }
+    .final-cta h2 { font-size: clamp(30px, 4vw, 46px); font-weight: 900; margin-bottom: 14px; letter-spacing: -0.02em; }
+    .final-cta .lead { color: #CBD5E1; font-size: 18px; margin-bottom: 36px; max-width: 560px; margin-inline: auto; }
+    .form-card { background: white; border-radius: var(--radius-lg); padding: 36px 32px; max-width: 540px; margin: 0 auto; box-shadow: var(--shadow-lg); position: relative; z-index: 1; text-align: left; color: var(--ink); }
+    .form-card h3 { font-size: 20px; font-weight: 800; margin-bottom: 6px; color: var(--ink); }
+    .form-card .form-pitch { color: var(--ink-soft); font-size: 14px; margin-bottom: 22px; }
+    .form-row { margin-bottom: 14px; }
+    .form-row label { display: block; font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+    .form-row input, .form-row select, .form-row textarea { width: 100%; padding: 12px 14px; border: 1px solid var(--border); border-radius: 10px; font-family: inherit; font-size: 15px; background: white; color: var(--ink); transition: border-color 0.15s, box-shadow 0.15s; }
+    .form-row input:focus, .form-row select:focus, .form-row textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(14,165,233,0.18); }
+    .form-row textarea { resize: vertical; min-height: 80px; font-family: inherit; }
+    .form-submit { width: 100%; background: var(--ink); color: white; padding: 14px 18px; border-radius: 12px; border: none; font-family: inherit; font-size: 16px; font-weight: 700; cursor: pointer; transition: background 0.15s, transform 0.15s, box-shadow 0.15s; margin-top: 4px; }
+    .form-submit:hover { background: var(--primary); transform: translateY(-2px); box-shadow: 0 12px 24px -8px rgba(14,165,233,0.5); }
+    .form-submit:disabled { background: var(--ink-mute); cursor: wait; transform: none; }
+    .form-honeypot { position: absolute; left: -9999px; visibility: hidden; }
+    .divider-or { display: flex; align-items: center; gap: 16px; max-width: 360px; margin: 32px auto 24px; color: rgba(255,255,255,0.6); font-size: 13px; font-weight: 600; }
+    .divider-or::before, .divider-or::after { content: ""; flex: 1; height: 1px; background: rgba(255,255,255,0.18); }
+    .alt-cta-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+    .thanks-state { text-align: center; padding: 24px 12px; }
+    .thanks-state .check-big { width: 64px; height: 64px; margin: 0 auto 16px; background: var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; }
+    .thanks-state h4 { font-size: 22px; font-weight: 800; margin-bottom: 8px; color: var(--ink); }
+    .thanks-state p { color: var(--ink-soft); font-size: 15px; }
+
+    /* FOOTER */
+    footer { background: #0B1220; color: #94A3B8; padding: 56px 24px 28px; font-size: 14px; }
+    .foot-grid { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 32px; margin-bottom: 40px; }
+    @media (max-width: 820px) { .foot-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 540px) { .foot-grid { grid-template-columns: 1fr; } }
+    .foot-logo { color: white; font-weight: 900; font-size: 19px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+    .foot-desc { max-width: 340px; line-height: 1.7; }
+    .foot-col h5 { color: white; font-size: 14px; margin-bottom: 14px; font-weight: 800; }
+    .foot-col a { display: block; margin-bottom: 8px; }
+    .foot-col a:hover { color: white; }
+    .foot-bottom { max-width: 1160px; margin: 0 auto; border-top: 1px solid #1E293B; padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 13px; }
+    .foot-bottom a { color: #94A3B8; }
+    .foot-bottom a:hover { color: white; }
+
+    /* A11Y WIDGET */
+    .a11y-toggle { position: fixed; bottom: 22px; right: 22px; width: 52px; height: 52px; background: var(--primary); color: white; border: none; border-radius: 50%; box-shadow: 0 8px 24px -6px rgba(14,165,233,0.55); cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 40; transition: transform 0.15s, box-shadow 0.15s; }
+    .a11y-toggle:hover { transform: scale(1.06); }
+    .a11y-panel { position: fixed; bottom: 86px; right: 22px; width: 280px; background: white; border: 1px solid var(--border); border-radius: 14px; box-shadow: var(--shadow-xl); padding: 18px; z-index: 41; }
+    .a11y-panel[hidden] { display: none; }
+    .a11y-panel h4 { font-size: 14px; font-weight: 800; margin-bottom: 12px; color: var(--ink); }
+    .a11y-row { display: flex; align-items: center; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+    .a11y-row:last-child { border-bottom: none; }
+    .a11y-btn-group { display: inline-flex; gap: 6px; }
+    .a11y-btn { width: 32px; height: 32px; background: var(--bg-soft); border: 1px solid var(--border); border-radius: 6px; font-weight: 700; cursor: pointer; color: var(--ink); }
+    .a11y-btn:hover { background: var(--primary-light); border-color: var(--primary); }
+    .a11y-switch { width: 40px; height: 22px; background: var(--border-strong); border-radius: 999px; border: none; position: relative; cursor: pointer; transition: background 0.2s; }
+    .a11y-switch::after { content: ""; position: absolute; top: 2px; left: 2px; width: 18px; height: 18px; background: white; border-radius: 50%; transition: transform 0.2s; }
+    .a11y-switch[aria-pressed="true"] { background: var(--primary); }
+    .a11y-switch[aria-pressed="true"]::after { transform: translateX(18px); }
+    .a11y-reset { width: 100%; margin-top: 10px; padding: 8px; background: transparent; border: 1px solid var(--border); border-radius: 8px; cursor: pointer; font-size: 13px; color: var(--ink-soft); }
+    .a11y-reset:hover { color: var(--ink); border-color: var(--ink); }
+  </style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<div class="topbar" role="region" aria-label="Contact info">
+  <div class="topbar-inner">
+    <div class="topbar-info">
+      <a class="topbar-item" href="tel:+972500000000" aria-label="Call us">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.86 19.86 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>+972-50-000-0000</span>
+      </a>
+      <a class="topbar-item" href="mailto:tal.kiteweb@gmail.com" aria-label="Email us">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span>tal.kiteweb@gmail.com</span>
+      </a>
+      <span class="topbar-item topbar-promise" aria-hidden="true">⚡ 24-hour response time</span>
+    </div>
+    <div class="topbar-info">
+      <a class="topbar-item" href="/" hreflang="he" aria-label="עברית">עברית ↗</a>
+    </div>
+  </div>
+</div>
+
+<nav aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#" class="logo" aria-label="KiteWeb home">
+      <span class="logo-mark" aria-hidden="true">
+        <svg width="34" height="34" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="kg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0EA5E9"/><stop offset="100%" stop-color="#6366F1"/></linearGradient></defs>
+          <path d="M20 4 L36 20 L20 36 L4 20 Z" fill="url(#kg)"/>
+          <path d="M20 4 L20 36 M4 20 L36 20" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M20 36 L17 39 M20 36 L23 39 M20 36 L20 40" stroke="#FBBF24" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span>KiteWeb</span>
+    </a>
+    <div class="nav-links">
+      <a href="#how" class="nav-link desktop-only">How it works</a>
+      <a href="#price" class="nav-link desktop-only">Pricing</a>
+      <a href="#faq" class="nav-link desktop-only">FAQ</a>
+      <a href="#about" class="nav-link desktop-only">About</a>
+      <a href="/" class="nav-lang desktop-only" hreflang="he" aria-label="עברית">עב</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<header class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Helping Israeli small businesses get found</span>
+      </div>
+      <h1 class="hero-title">
+        Your business online,<br/>
+        <span class="highlight">live in 24 hours.</span>
+      </h1>
+      <p class="hero-sub">
+        We build beautiful, fast, professional websites for small businesses in Israel.
+        One fair price. No weeks of waiting. No surprises in the invoice.
+      </p>
+      <div class="cta-row">
+        <a href="#contact" class="btn btn-primary">
+          Get a quote in 24 hours
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="https://wa.me/972500000000?text=Hi%2C%20I%27m%20interested%20in%20a%20website" class="btn btn-whatsapp" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5C18.3 1.2 15.2 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8.9 3.8 1.4 5.8 1.4 6.6 0 12-5.4 12-12 0-3.2-1.3-6.2-3.5-8.4z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+      <div class="hero-meta">
+        <div class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Israeli company</div>
+        <div class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>No hidden fees</div>
+        <div class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Personal support</div>
+      </div>
+    </div>
+
+    <div class="preview-stack" aria-hidden="true">
+      <div class="preview-card back-1">
+        <div class="browser-bar"><span class="browser-dot red"></span><span class="browser-dot yellow"></span><span class="browser-dot green"></span><span class="browser-url">avi-plumber.kiteweb.co.il</span></div>
+        <div class="preview-body">
+          <div class="preview-hero-title">Avi Plumbing · 24/7</div>
+          <div class="preview-hero-sub">Emergency plumbing · Tel Aviv area</div>
+          <div class="preview-stars">★★★★★ <span>(89)</span></div>
+          <a href="#" class="preview-btn">Quick call</a>
+        </div>
+      </div>
+      <div class="preview-card back-2">
+        <div class="browser-bar"><span class="browser-dot red"></span><span class="browser-dot yellow"></span><span class="browser-dot green"></span><span class="browser-url">cohen-law.kiteweb.co.il</span></div>
+        <div class="preview-body">
+          <div class="preview-hero-title">Cohen Law Firm</div>
+          <div class="preview-hero-sub">Family · Commercial · Real Estate</div>
+          <div class="preview-stars">★★★★★ <span>(54)</span></div>
+          <a href="#" class="preview-btn">Book a meeting</a>
+        </div>
+      </div>
+      <div class="preview-card front">
+        <div class="browser-bar"><span class="browser-dot red"></span><span class="browser-dot yellow"></span><span class="browser-dot green"></span><span class="browser-url">salon-david.kiteweb.co.il</span></div>
+        <div class="preview-body">
+          <div class="preview-hero-title">Salon David · Professional Hair Design</div>
+          <div class="preview-hero-sub">Holon · 12 years experience · Open now</div>
+          <div class="preview-stars">★★★★★ <span>(127 reviews)</span></div>
+          <a href="#" class="preview-btn">Book now</a>
+          <div class="preview-photos">
+            <div class="preview-photo p1"></div><div class="preview-photo p2"></div><div class="preview-photo p3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="trust-strip">
+  <div class="trust-grid">
+    <div class="trust-cell"><div class="num">24h</div><div class="label">From kickoff to live</div></div>
+    <div class="trust-cell"><div class="num">₪990</div><div class="label">Fixed price · no surprises</div></div>
+    <div class="trust-cell"><div class="num">100%</div><div class="label">Hebrew & English · RTL</div></div>
+    <div class="trust-cell"><div class="num">30 days</div><div class="label">Money-back guarantee</div></div>
+  </div>
+</div>
+
+<section id="how" class="block alt">
+  <div class="container">
+    <span class="section-eyebrow">How it works</span>
+    <h2 class="section-title">Three steps from call to live site</h2>
+    <p class="section-sub">No long questionnaires, no wasted meetings, no weeks of back-and-forth. You keep running your business — we do the rest.</p>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><h3>10-minute call</h3><p>We learn about your business — hours, services, area. One or two questions, that's it.</p></div>
+      <div class="step"><div class="step-num">2</div><h3>We build the site</h3><p>Within 24 hours you have a professional site with your photos and Google reviews, ready to show any customer.</p></div>
+      <div class="step"><div class="step-num">3</div><h3>Live online</h3><p>We connect your domain, sync with Google Business, and you start showing up in searches. You just answer the phone.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="price">
+  <div class="container">
+    <span class="section-eyebrow">What's included</span>
+    <h2 class="section-title">Everything you need to look professional online</h2>
+    <div class="included-grid">
+      <div class="features">
+        <div class="feature"><span class="check" aria-hidden="true">✓</span><div class="feature-text">Custom-designed site<small>Designed for you, not a template</small></div></div>
+        <div class="feature"><span class="check" aria-hidden="true">✓</span><div class="feature-text">Mobile-optimized<small>80% of your customers are on phones</small></div></div>
+        <div class="feature"><span class="check" aria-hidden="true">✓</span><div class="feature-text">Google integration<small>Reviews, map, hours sync automatically</small></div></div>
+        <div class="feature"><span class="check" aria-hidden="true">✓</span><div class="feature-text">Contact form + WhatsApp<small>Customers reach you in one click</small></div></div>
+        <div class="feature"><span class="check" aria-hidden="true">✓</span><div class="feature-text">SSL + hosting included<small>No extra security or hosting bills</small></div></div>
+        <div class="feature"><span class="check" aria-hidden="true">✓</span><div class="feature-text">Free changes in month one<small>Until the site is perfect for you</small></div></div>
+        <div class="feature"><span class="check" aria-hidden="true">✓</span><div class="feature-text">Personal Hebrew/English support<small>Real human, by phone or WhatsApp</small></div></div>
+        <div class="feature"><span class="check" aria-hidden="true">✓</span><div class="feature-text">Accessibility-compliant<small>Israeli Standard 5568 / WCAG 2.0 AA</small></div></div>
+      </div>
+      <div class="price-card">
+        <span class="price-tag">One package. Simple.</span>
+        <h3>Full website setup</h3>
+        <p class="price-pitch">Everything included. Everything upfront. No add-ons that show up later.</p>
+        <div class="price-line"><span class="price-amount">₪990</span><span class="price-unit">one-time setup</span></div>
+        <p class="price-recurring"><strong>+ ₪49/month</strong> hosting, security, support</p>
+        <a href="#contact" class="btn btn-primary">Let's start</a>
+        <div class="guarantee">
+          <div class="guarantee-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <p class="guarantee-text"><strong>30-day guarantee.</strong> Not satisfied? Full refund, no questions asked.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="container">
+    <span class="section-eyebrow">Why KiteWeb</span>
+    <h2 class="section-title">An honest comparison</h2>
+    <p class="section-sub">We don't try to be the biggest. We're trying to be the most sensible choice for small Israeli businesses.</p>
+    <div class="compare-card">
+      <table class="compare" aria-label="Comparison with alternatives">
+        <thead><tr><th></th><th class="us">KiteWeb</th><th>DIY Wix</th><th>Traditional studio</th></tr></thead>
+        <tbody>
+          <tr><td>Setup cost</td><td class="us">₪990</td><td>Free (your time)</td><td>₪3,000-10,000</td></tr>
+          <tr><td>Time to live</td><td class="us">24 hours</td><td>1-4 weeks of your work</td><td>4-12 weeks</td></tr>
+          <tr><td>Custom design</td><td class="us"><span class="cmp-yes">✓</span></td><td><span class="cmp-no">Template</span></td><td><span class="cmp-yes">✓</span></td></tr>
+          <tr><td>Google integration</td><td class="us"><span class="cmp-yes">✓ Auto</span></td><td><span class="cmp-mid">Manual</span></td><td><span class="cmp-mid">Extra fee</span></td></tr>
+          <tr><td>Personal support</td><td class="us"><span class="cmp-yes">✓ Direct with founder</span></td><td><span class="cmp-no">English chat</span></td><td><span class="cmp-mid">Studio-dependent</span></td></tr>
+          <tr><td>Money-back guarantee</td><td class="us"><span class="cmp-yes">30 days</span></td><td>—</td><td><span class="cmp-no">None</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <span class="section-eyebrow">Add-ons</span>
+    <h2 class="section-title">Tools that multiply your business</h2>
+    <p class="section-sub">You don't need everything on day one. Start with the site — add these when you're ready.</p>
+    <div class="addons">
+      <div class="addon">
+        <div class="addon-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+        <h4>Smart WhatsApp bot</h4>
+        <p>Replies 24/7, books appointments, sends reminders. Saves 70% of your phone time.</p>
+        <span class="addon-tag">Details on call</span>
+      </div>
+      <div class="addon">
+        <div class="addon-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <h4>Online booking</h4>
+        <p>Customers book directly from your site. Auto-reminders. Syncs with your calendar.</p>
+        <span class="addon-tag">Details on call</span>
+      </div>
+      <div class="addon">
+        <div class="addon-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <h4>Google Business management</h4>
+        <p>We get you more reviews, rank you higher in search, and keep every detail updated.</p>
+        <span class="addon-tag">Details on call</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="block alt">
+  <div class="container">
+    <span class="section-eyebrow">About us</span>
+    <h2 class="section-title">An Israeli company. Real people.</h2>
+    <div class="about-grid">
+      <div class="about-avatar" aria-hidden="true">T</div>
+      <div class="about-content">
+        <h3>Tal Hoch</h3>
+        <p class="role">Founder, KiteWeb</p>
+        <p>I started KiteWeb because I was tired of seeing excellent small businesses that nobody can find on Google. A great barbershop in Holon with 150 five-star reviews — but no website, so a new customer searching just finds the competitors.</p>
+        <p>With us, you get a fast, beautiful, professional site within 24 hours. One price on this page — no surprises, no "extras" that appear later. The first call is free consulting, and even if you decide it's not for you — you'll get useful advice.</p>
+        <p class="signature">— Tal Hoch · +972-50-000-0000 · tal.kiteweb@gmail.com</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="block">
+  <div class="container">
+    <span class="section-eyebrow">FAQ</span>
+    <h2 class="section-title">The questions everyone asks on the first call</h2>
+    <p class="section-sub">We don't like ambiguity. Honest answers below — and if your question isn't here, just call.</p>
+    <div class="faq-list">
+      <details class="faq-item"><summary>How long does it really take?</summary><div class="faq-answer">24 hours from the first call — guaranteed. Day 2 you see the first version, day 3 revisions, day 4 live with your domain. If we miss the deadline, you don't pay your first month of hosting.</div></details>
+      <details class="faq-item"><summary>Why only ₪990? Where's the catch?</summary><div class="faq-answer">No catch. We built our own tooling that speeds the process up — auto-generating copy from your Google details, designing with custom templates we developed. A traditional studio would put 4-6 weeks of person-hours on this. We do the same quality in less time, at a fair price.</div></details>
+      <details class="faq-item"><summary>Can I edit the site myself later?</summary><div class="faq-answer">Yes. We give you a simple panel where you can update photos, prices, hours, promotions — in 2 clicks. Bigger changes (like redesign) — send us a WhatsApp and we'll do it in a few hours.</div></details>
+      <details class="faq-item"><summary>I'm already on Facebook and Instagram — why do I need a website?</summary><div class="faq-answer">Customers searching for you on Google don't find your Facebook page — they find competitors. Google builds search results primarily on websites. A site from us connects to your Google profile and social pages automatically, so you show up everywhere people search.</div></details>
+      <details class="faq-item"><summary>What if I'm not happy?</summary><div class="faq-answer">30-day money-back guarantee, no questions asked. Full refund of the ₪990 plus first month. You're not locked into a yearly contract — leave any time, just say so, and we'll hand over the files.</div></details>
+      <details class="faq-item"><summary>Do you require upfront payment?</summary><div class="faq-answer">₪300 deposit to start (so we're aligned), the rest after the site is live and you've approved it 100%. The first call and the initial draft are free.</div></details>
+      <details class="faq-item"><summary>How do I know you're trustworthy? You're new.</summary><div class="faq-answer">Yes, we're a new company (2026) — that's why we fight for every customer. We have a 30-day guarantee, our offer is in writing, and you talk directly to me (Tal Hoch) on WhatsApp at every stage. No support queues, no "the manager isn't here."</div></details>
+      <details class="faq-item"><summary>What if I already have a domain or an old site?</summary><div class="faq-answer">Great — we migrate your domain at no extra cost. If you have an old site that doesn't work well, we take your existing content and build something that works, from scratch. All included in the ₪990.</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta" id="contact">
+  <div class="final-cta-inner">
+    <h2>Ready for new customers to start finding you?</h2>
+    <p class="lead">Leave your details and we'll get back to you within 24 hours. The first call is free — even if you don't end up working with us.</p>
+
+    <div class="form-card" id="formCard">
+      <h3>Leave your details</h3>
+      <p class="form-pitch">No spam, no aggressive sales. Just one consultation call.</p>
+      <form id="contactForm" name="contact-en" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact-en" />
+        <p class="form-honeypot"><label>Don't fill this in: <input name="bot-field" tabindex="-1"></label></p>
+        <div class="form-row"><label for="f-name">Full name</label><input id="f-name" type="text" name="name" required autocomplete="name" /></div>
+        <div class="form-row"><label for="f-business">Business name</label><input id="f-business" type="text" name="business" autocomplete="organization" /></div>
+        <div class="form-row"><label for="f-phone">Phone</label><input id="f-phone" type="tel" name="phone" required autocomplete="tel" placeholder="+972-50-000-0000" /></div>
+        <div class="form-row">
+          <label for="f-type">Business type</label>
+          <select id="f-type" name="business_type">
+            <option value="">Choose...</option>
+            <option>Beauty / Salon / Spa</option>
+            <option>Gym / Studio / Wellness</option>
+            <option>Plumber / Electrician / Trades</option>
+            <option>Lawyer / Accountant / Clinic</option>
+            <option>Shop / Restaurant</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-row"><label for="f-notes">Notes (optional)</label><textarea id="f-notes" name="notes" placeholder="Tell us about your business or what you're looking for..."></textarea></div>
+        <button type="submit" class="form-submit" id="submitBtn">Send details — we'll get back within 24 hours</button>
+      </form>
+    </div>
+
+    <div class="divider-or"><span>or reach us directly</span></div>
+    <div class="alt-cta-row">
+      <a href="tel:+972500000000" class="btn btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.86 19.86 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +972-50-000-0000
+      </a>
+      <a href="https://wa.me/972500000000" class="btn btn-whatsapp" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5C18.3 1.2 15.2 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8.9 3.8 1.4 5.8 1.4 6.6 0 12-5.4 12-12 0-3.2-1.3-6.2-3.5-8.4z"/></svg>
+        WhatsApp
+      </a>
+      <a href="mailto:tal.kiteweb@gmail.com" class="btn btn-ghost">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Email
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-logo">
+        <svg width="24" height="24" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 4 L36 20 L20 36 L4 20 Z" fill="#0EA5E9"/><path d="M20 4 L20 36 M4 20 L36 20" stroke="white" stroke-width="1.5"/></svg>
+        KiteWeb
+      </div>
+      <p class="foot-desc">Professional websites for small businesses in Israel. Founded in 2026 — because great businesses deserve to be found online.</p>
+    </div>
+    <div class="foot-col">
+      <h5>Links</h5>
+      <a href="#how">How it works</a>
+      <a href="#price">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#about">About</a>
+    </div>
+    <div class="foot-col">
+      <h5>Contact</h5>
+      <a href="tel:+972500000000">+972-50-000-0000</a>
+      <a href="https://wa.me/972500000000" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="mailto:tal.kiteweb@gmail.com">tal.kiteweb@gmail.com</a>
+    </div>
+    <div class="foot-col">
+      <h5>Legal</h5>
+      <a href="accessibility.html">Accessibility</a>
+      <a href="/">עברית</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 KiteWeb · Tal Hoch · All rights reserved</span>
+    <span><a href="accessibility.html">Accessibility Statement</a> · Built in Israel</span>
+  </div>
+</footer>
+
+<button class="a11y-toggle" id="a11yToggle" aria-label="Open accessibility menu" aria-expanded="false" aria-controls="a11yPanel">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="4" r="2"/><path d="M19 13l-7-2-7 2"/><path d="M12 11v3l-3 7M12 14l3 7"/></svg>
+</button>
+<div class="a11y-panel" id="a11yPanel" hidden role="dialog" aria-label="Accessibility menu">
+  <h4>Accessibility</h4>
+  <div class="a11y-row"><span>Text size</span><div class="a11y-btn-group"><button class="a11y-btn" data-a11y="font-down" aria-label="Decrease text">A-</button><button class="a11y-btn" data-a11y="font-up" aria-label="Increase text">A+</button></div></div>
+  <div class="a11y-row"><span>High contrast</span><button class="a11y-switch" data-a11y="contrast" aria-pressed="false" aria-label="High contrast"></button></div>
+  <div class="a11y-row"><span>Highlight links</span><button class="a11y-switch" data-a11y="links" aria-pressed="false" aria-label="Highlight links"></button></div>
+  <button class="a11y-reset" data-a11y="reset">Reset</button>
+  <p style="font-size:12px;color:var(--ink-mute);margin-top:10px;text-align:center;"><a href="accessibility.html" style="color:var(--primary);">Full accessibility statement</a></p>
+</div>
+
+<script>
+  (function() {
+    const form = document.getElementById('contactForm');
+    const formCard = document.getElementById('formCard');
+    const btn = document.getElementById('submitBtn');
+    if (!form) return;
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      const fd = new FormData(form);
+      try {
+        const r = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(fd).toString(),
+        });
+        if (!r.ok) throw new Error('submit failed');
+        formCard.innerHTML = `
+          <div class="thanks-state">
+            <div class="check-big" aria-hidden="true"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <h4>Thanks! We got your details</h4>
+            <p>We'll be in touch within 24 hours. Meanwhile, feel free to message us on WhatsApp.</p>
+          </div>`;
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = 'Send details — we\'ll get back within 24 hours';
+        alert('Something went wrong. Please call +972-50-000-0000 or message us on WhatsApp.');
+      }
+    });
+  })();
+
+  (function() {
+    const toggle = document.getElementById('a11yToggle');
+    const panel = document.getElementById('a11yPanel');
+    if (!toggle || !panel) return;
+    const KEY = 'kiteweb_a11y';
+    const state = JSON.parse(localStorage.getItem(KEY) || '{"font":0,"hc":false,"links":false}');
+    function apply() {
+      document.documentElement.style.fontSize = (17 + state.font * 2) + 'px';
+      document.body.classList.toggle('hc-mode', state.hc);
+      document.body.classList.toggle('highlight-links', state.links);
+      document.querySelectorAll('[data-a11y="contrast"]').forEach(b => b.setAttribute('aria-pressed', state.hc));
+      document.querySelectorAll('[data-a11y="links"]').forEach(b => b.setAttribute('aria-pressed', state.links));
+      localStorage.setItem(KEY, JSON.stringify(state));
+    }
+    toggle.addEventListener('click', () => {
+      const open = panel.hidden;
+      panel.hidden = !open;
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+    document.addEventListener('click', (e) => {
+      if (!panel.contains(e.target) && e.target !== toggle && !toggle.contains(e.target)) {
+        panel.hidden = true;
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+    panel.addEventListener('click', (e) => {
+      const action = e.target.closest('[data-a11y]')?.dataset.a11y;
+      if (!action) return;
+      if (action === 'font-up') state.font = Math.min(4, state.font + 1);
+      else if (action === 'font-down') state.font = Math.max(-2, state.font - 1);
+      else if (action === 'contrast') state.hc = !state.hc;
+      else if (action === 'links') state.links = !state.links;
+      else if (action === 'reset') { state.font = 0; state.hc = false; state.links = false; }
+      apply();
+    });
+    apply();
+  })();
+</script>
+
+</body>
+</html>

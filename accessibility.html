@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>הצהרת נגישות · KiteWeb</title>
+  <meta name="description" content="הצהרת נגישות KiteWeb לפי תקן ישראלי 5568 (WCAG 2.0 AA)." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M20 4 L36 20 L20 36 L4 20 Z' fill='%230EA5E9'/%3E%3Cpath d='M20 4 L20 36 M4 20 L36 20' stroke='white' stroke-width='1.5'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #FAFAFA;
+      --ink: #0F172A;
+      --ink-soft: #475569;
+      --border: #E2E8F0;
+      --primary: #0EA5E9;
+      --primary-dark: #0284C7;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Heebo', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.7;
+      font-size: 17px;
+    }
+    a { color: var(--primary-dark); }
+    a:hover { color: var(--primary); }
+    .container { max-width: 760px; margin: 0 auto; padding: 60px 24px; }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--ink-soft);
+      font-size: 14px;
+      margin-bottom: 32px;
+      text-decoration: none;
+    }
+    .back-link:hover { color: var(--ink); }
+    h1 {
+      font-size: clamp(32px, 4vw, 44px);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 18px;
+    }
+    .updated {
+      color: var(--ink-soft);
+      font-size: 14px;
+      margin-bottom: 40px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    h2 {
+      font-size: 24px;
+      font-weight: 800;
+      margin: 36px 0 14px;
+      letter-spacing: -0.01em;
+    }
+    h3 { font-size: 18px; font-weight: 700; margin: 24px 0 10px; }
+    p { color: var(--ink-soft); margin-bottom: 14px; }
+    ul { padding-right: 24px; margin-bottom: 14px; }
+    li { color: var(--ink-soft); margin-bottom: 6px; }
+    .coordinator {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      margin-top: 16px;
+    }
+    .coordinator p { color: var(--ink); margin-bottom: 6px; }
+    .coordinator strong { font-weight: 700; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <a href="/" class="back-link">→ חזרה לדף הבית</a>
+
+  <h1>הצהרת נגישות</h1>
+  <p class="updated">עודכן לאחרונה: 27 במאי 2026</p>
+
+  <h2>המחויבות שלנו לנגישות</h2>
+  <p>
+    אנחנו ב-KiteWeb מאמינים שהאינטרנט צריך להיות נגיש לכולם — ללא תלות במוגבלות פיזית, חושית או קוגניטיבית.
+    האתר הזה תוכנן ונבנה כדי לעמוד בדרישות החוק הישראלי לנגישות, ובכלל זה <strong>תקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע"ג-2013</strong> ו-<strong>תקן ישראלי 5568</strong> ברמת AA (תואם WCAG 2.0 AA).
+  </p>
+
+  <h2>אופציות הנגישות באתר</h2>
+  <p>בכל עמודי האתר זמין תפריט נגישות (הסמל בפינה התחתונה השמאלית), המאפשר:</p>
+  <ul>
+    <li>הגדלה והקטנה של גודל הטקסט</li>
+    <li>הפעלת מצב ניגודיות גבוהה</li>
+    <li>הדגשת קישורים</li>
+    <li>איפוס לברירות המחדל</li>
+  </ul>
+  <p>ההגדרות נשמרות אוטומטית ויחולו גם בביקור הבא.</p>
+
+  <h3>התאמות נוספות שבוצעו באתר</h3>
+  <ul>
+    <li>ניווט מלא במקלדת — אפשר להגיע לכל אלמנט פעיל עם מקש Tab</li>
+    <li>סימון ויזואלי ברור של המוקד (focus indicator) על כל קישור וכפתור</li>
+    <li>קישור "דלג לתוכן הראשי" שמופיע בעת מעבר במקלדת</li>
+    <li>תיאורי ARIA לכל הפקדים וכפתורי פעולה</li>
+    <li>טקסט חלופי לתמונות משמעותיות</li>
+    <li>יחסי ניגודיות התואמים את דרישת AA (4.5:1 לטקסט רגיל, 3:1 לטקסט גדול)</li>
+    <li>תאימות לקוראי מסך (VoiceOver, NVDA, JAWS)</li>
+    <li>תמיכה מלאה בעברית ובכיווניות מימין לשמאל (RTL)</li>
+    <li>גופנים נקיים וקריאים, ללא אנימציות מטרידות</li>
+  </ul>
+
+  <h2>מגבלות ידועות</h2>
+  <p>
+    אנחנו עובדים באופן שוטף לשפר את הנגישות באתר. במקרה ומצאתם תכנים שאינם נגישים כראוי — אנא דווחו לרכז הנגישות שלנו ונטפל בכך בהקדם.
+  </p>
+
+  <h2>פרטי רכז הנגישות</h2>
+  <div class="coordinator">
+    <p><strong>שם:</strong> טל הוך</p>
+    <p><strong>תפקיד:</strong> מייסד KiteWeb ורכז נגישות</p>
+    <p><strong>טלפון:</strong> <a href="tel:+972500000000">050-000-0000</a></p>
+    <p><strong>אימייל:</strong> <a href="mailto:tal.kiteweb@gmail.com">tal.kiteweb@gmail.com</a></p>
+    <p><strong>WhatsApp:</strong> <a href="https://wa.me/972500000000" target="_blank" rel="noopener">לחצו לפתיחת שיחה</a></p>
+  </div>
+  <p style="margin-top:16px;">
+    נשמח לקבל פניות בכל נושא נגישות — תלונה, הצעת שיפור, או בקשה לקבלת מידע בפורמט נגיש. נחזור אליכם תוך 5 ימי עסקים.
+  </p>
+
+  <h2>תקנים ומסגרת חוקית</h2>
+  <p>
+    אתר זה תוכנן בהתאם להנחיות הבאות:
+  </p>
+  <ul>
+    <li><strong>חוק שוויון זכויות לאנשים עם מוגבלות, התשנ"ח-1998</strong></li>
+    <li><strong>תקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע"ג-2013</strong></li>
+    <li><strong>תקן ישראלי 5568</strong> — תוכן באינטרנט נגיש, ברמת AA</li>
+    <li><strong>WCAG 2.0 AA</strong> — Web Content Accessibility Guidelines</li>
+  </ul>
+
+  <h2>שאלות, בקשות ותלונות</h2>
+  <p>
+    אם נתקלתם בקושי או בעמוד שאינו נגיש כראוי, או שיש לכם הצעה לשיפור — אנא צרו קשר עם רכז הנגישות (פרטים למעלה).
+    אנחנו מתחייבים לבחון כל פנייה ולחזור עם מענה תוך 5 ימי עסקים.
+  </p>
+
+  <p style="margin-top:40px;color:#94A3B8;font-size:13px;text-align:center;">
+    © 2026 KiteWeb · טל הוך · <a href="/">חזרה לדף הבית</a> · <a href="/en/accessibility.html">English version</a>
+  </p>
+</div>
+
+</body>
+</html>
