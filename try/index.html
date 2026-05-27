@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>בנו לעצמכם תצוגה מקדימה · KiteWebs</title>
+<meta name="description" content="מלאו את הפרטים של העסק שלכם ותראו תוך 60 שניות איך האתר שלכם ייראה. בלי הרשמה, בלי התחייבות.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M20 4 L36 20 L20 36 L4 20 Z' fill='%2306B6D4'/%3E%3Cpath d='M20 4 L20 36 M4 20 L36 20' stroke='white' stroke-width='1.5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0A0E1A;
+    --ink-soft: #475569;
+    --ink-mute: #94A3B8;
+    --bg: #FAFAFA;
+    --bg-soft: #F0F9FF;
+    --surface: #FFFFFF;
+    --border: #E5E7EB;
+    --cyan: #06B6D4;
+    --violet: #8B5CF6;
+    --pink: #EC4899;
+    --green: #10B981;
+    --amber: #F59E0B;
+    --grad: linear-gradient(135deg, #06B6D4 0%, #8B5CF6 100%);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Heebo', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  a { color: inherit; text-decoration: none; }
+  :focus-visible { outline: 3px solid var(--cyan); outline-offset: 2px; }
+
+  /* === NAV === */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(250,250,250,0.92);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 900; font-size: 20px; }
+  .nav-cta {
+    background: var(--ink);
+    color: white;
+    padding: 9px 18px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: background 0.15s, transform 0.15s;
+  }
+  .nav-cta:hover { background: var(--cyan); transform: translateY(-1px); }
+
+  /* === HERO === */
+  .hero {
+    background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+    padding: 50px 24px 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .kicker {
+    display: inline-block;
+    padding: 6px 14px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--cyan);
+    margin-bottom: 18px;
+    letter-spacing: 0.06em;
+  }
+  h1 {
+    font-size: clamp(28px, 4.5vw, 46px);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: 12px;
+  }
+  h1 .grad { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .hero-sub { font-size: 17px; color: var(--ink-soft); max-width: 600px; margin: 0 auto; }
+
+  /* === BUILDER LAYOUT === */
+  .builder {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 30px 24px 80px;
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 28px;
+  }
+  @media (max-width: 920px) { .builder { grid-template-columns: 1fr; } }
+
+  .form-panel {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 10px 30px -16px rgba(15,23,42,0.10);
+    position: sticky;
+    top: 80px;
+    align-self: start;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+  }
+  @media (max-width: 920px) { .form-panel { position: static; max-height: none; } }
+  .form-panel h2 { font-size: 19px; font-weight: 800; margin-bottom: 4px; }
+  .form-panel .sub { font-size: 14px; color: var(--ink-soft); margin-bottom: 22px; }
+  .row { margin-bottom: 14px; }
+  .row label { display: block; font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+  .row input, .row select {
+    width: 100%;
+    padding: 11px 13px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 15px;
+    background: white;
+    color: var(--ink);
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .row input:focus, .row select:focus {
+    outline: none;
+    border-color: var(--cyan);
+    box-shadow: 0 0 0 3px rgba(6,182,212,0.18);
+  }
+  .row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .form-actions { display: flex; flex-direction: column; gap: 10px; margin-top: 22px; padding-top: 22px; border-top: 1px solid var(--border); }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: transform 0.15s, background 0.15s, box-shadow 0.15s;
+  }
+  .btn-primary {
+    background: var(--ink);
+    color: white;
+    box-shadow: 0 10px 24px -10px rgba(15,23,42,0.4);
+  }
+  .btn-primary:hover { background: var(--cyan); transform: translateY(-2px); }
+  .btn-ghost {
+    background: white;
+    color: var(--ink);
+    border-color: var(--border);
+  }
+  .btn-ghost:hover { border-color: var(--ink); }
+  .share-status { font-size: 12px; color: var(--green); margin-top: 6px; min-height: 16px; text-align: center; }
+
+  /* === PREVIEW PANEL === */
+  .preview-panel {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 16px 40px -20px rgba(15,23,42,0.18);
+    display: flex;
+    flex-direction: column;
+  }
+  .browser-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    background: #F8FAFC;
+    border-bottom: 1px solid var(--border);
+  }
+  .bd { width: 10px; height: 10px; border-radius: 50%; }
+  .bd-r { background: #FCA5A5; }
+  .bd-y { background: #FCD34D; }
+  .bd-g { background: #86EFAC; }
+  .browser-url {
+    flex: 1;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 12px;
+    font-size: 12px;
+    color: var(--ink-mute);
+    text-align: center;
+    direction: ltr;
+  }
+  iframe.preview-frame {
+    width: 100%;
+    border: none;
+    flex: 1;
+    min-height: 720px;
+    background: white;
+  }
+  @media (max-width: 920px) { iframe.preview-frame { min-height: 600px; } }
+
+  /* === FOOTER === */
+  footer {
+    background: #0B1220;
+    color: #94A3B8;
+    padding: 30px 24px;
+    text-align: center;
+    font-size: 14px;
+  }
+  footer a { color: white; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <svg width="30" height="30" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#06B6D4"/><stop offset="100%" stop-color="#8B5CF6"/></linearGradient></defs>
+        <path d="M20 4 L36 20 L20 36 L4 20 Z" fill="url(#lg)"/>
+        <path d="M20 4 L20 36 M4 20 L36 20" stroke="white" stroke-width="1.5"/>
+      </svg>
+      <span>KiteWebs</span>
+    </a>
+    <a href="/#contact" class="nav-cta">צרו קשר</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="kicker">בנייה חיה · ללא הרשמה</div>
+  <h1>בנו תצוגה מקדימה של <span class="grad">האתר שלכם</span> תוך 60 שניות.</h1>
+  <p class="hero-sub">מלאו את הפרטים בצד ותראו את האתר מתעצב בזמן אמת. אם תאהבו, נעלה אותו לאוויר תוך 24 שעות ב-990 ₪.</p>
+</header>
+
+<section class="builder">
+
+  <aside class="form-panel">
+    <h2>פרטי העסק</h2>
+    <p class="sub">כתבו ותראו את האתר נבנה לידכם</p>
+
+    <div class="row">
+      <label for="f-name">שם העסק</label>
+      <input id="f-name" type="text" value="סלון דוד" placeholder="לדוגמה: סלון דוד / משרד עו״ד כהן" />
+    </div>
+
+    <div class="row">
+      <label for="f-niche">סוג העסק</label>
+      <select id="f-niche">
+        <option value="beauty_wellness">מספרה / סלון יופי / סטודיו</option>
+        <option value="local_services">בעל מקצוע (אינסטלטור, חשמלאי, וכו׳)</option>
+        <option value="professionals">משרד מקצועי (עו״ד, רו״ח, קליניקה)</option>
+      </select>
+    </div>
+
+    <div class="row">
+      <label for="f-city">עיר</label>
+      <input id="f-city" type="text" value="חולון" placeholder="לדוגמה: תל אביב" />
+    </div>
+
+    <div class="row">
+      <label for="f-address">כתובת</label>
+      <input id="f-address" type="text" value="סוקולוב 88, חולון" placeholder="הרחוב והעיר" />
+    </div>
+
+    <div class="row">
+      <label for="f-phone">טלפון</label>
+      <input id="f-phone" type="tel" value="050-555-1234" placeholder="050-000-0000" />
+    </div>
+
+    <div class="row row-2">
+      <div>
+        <label for="f-rating">דירוג בגוגל</label>
+        <input id="f-rating" type="number" min="1" max="5" step="0.1" value="4.9" />
+      </div>
+      <div>
+        <label for="f-reviews">מספר ביקורות</label>
+        <input id="f-reviews" type="number" min="0" value="127" />
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button class="btn btn-primary" id="cta-real">קבל את האתר באמת ✨</button>
+      <button class="btn btn-ghost" id="cta-share">📋 העתקת קישור לשיתוף</button>
+      <div class="share-status" id="share-status"></div>
+    </div>
+  </aside>
+
+  <div class="preview-panel">
+    <div class="browser-bar">
+      <span class="bd bd-r"></span><span class="bd bd-y"></span><span class="bd bd-g"></span>
+      <span class="browser-url" id="browser-url">your-business.kitewebs.com</span>
+    </div>
+    <iframe class="preview-frame" id="preview-frame" title="תצוגה מקדימה של האתר שלך"></iframe>
+  </div>
+
+</section>
+
+<footer>
+  אתר הצעה אישי שמתעצב בזמן אמת על-ידי <a href="/">KiteWebs</a> · אתרים לעסקים בישראל
+</footer>
+
+<script>
+/* ===== NICHE CONFIG (must mirror kiteweb/preview/render.py) ===== */
+const NICHE_CONFIG = {
+  beauty_wellness: {
+    hero_kicker: "סלון יופי · מספרה · סטודיו",
+    hero_headline_2: "המקום שאליו לקוחות חוזרים.",
+    hero_sub: "מקצועיות, אווירה, ויחס אישי — בכל ביקור.",
+    primary_cta: "קביעת תור",
+    services_title: "מה אנחנו עושים",
+    services: [
+      ["עיצוב שיער", "תספורת, צביעה, החלקות והתאמה אישית לכל לקוחה"],
+      ["טיפולי שיער", "טיפולים מקצועיים — הזנה, שיקום, צבע"],
+      ["אווירה ביתית", "חלל נעים, מוזיקה רגועה, ושירות חם"],
+    ],
+    value_strip: [
+      ["שנות ניסיון", "12+"],
+      ["ימים פתוח", "6/שבוע"],
+      ["דירוג ממוצע", "{rating} ★"],
+    ],
+  },
+  local_services: {
+    hero_kicker: "שירותים מקצועיים · {city}",
+    hero_headline_2: "כשצריך — אנחנו שם.",
+    hero_sub: "שירות מהיר, מקצועי, ובמחיר הוגן.",
+    primary_cta: "התקשרו עכשיו",
+    services_title: "השירותים שלנו",
+    services: [
+      ["מהירות תגובה", "הגעה מיידית באזור {city}"],
+      ["ציוד מקצועי", "אנחנו מגיעים עם כל הכלים הדרושים"],
+      ["מחיר שקוף", "הצעת מחיר ברורה לפני העבודה"],
+    ],
+    value_strip: [
+      ["שנות פעילות", "10+"],
+      ["זמינות", "24/7"],
+      ["דירוג ממוצע", "{rating} ★"],
+    ],
+  },
+  professionals: {
+    hero_kicker: "ייעוץ מקצועי · {city}",
+    hero_headline_2: "מומחיות. גישה אישית.",
+    hero_sub: "ליווי אישי, אמינות, ושקיפות מלאה — מהפגישה הראשונה.",
+    primary_cta: "קביעת פגישת ייעוץ",
+    services_title: "תחומי העיסוק שלנו",
+    services: [
+      ["ייעוץ ראשוני", "פגישת היכרות ללא התחייבות"],
+      ["ליווי אישי", "ליווי מקצועי לאורך כל התהליך"],
+      ["שקיפות מלאה", "מחירים ברורים, ללא הפתעות בחשבון"],
+    ],
+    value_strip: [
+      ["שנות ניסיון", "15+"],
+      ["לקוחות מרוצים", "{reviews}+"],
+      ["דירוג ממוצע", "{rating} ★"],
+    ],
+  },
+};
+
+/* ===== PHONE NORMALIZATION ===== */
+function phoneIntl(raw) {
+  const digits = (raw || "").replace(/[^\d]/g, "");
+  if (digits.startsWith("972")) return "+" + digits;
+  if (digits.startsWith("0")) return "+972" + digits.substring(1);
+  return digits ? "+972" + digits : "";
+}
+
+/* ===== TEMPLATE — must mirror kiteweb/preview/render.py ===== */
+function renderPreview(data) {
+  const niche = data.niche || "beauty_wellness";
+  const cfg = NICHE_CONFIG[niche];
+  const fmt = (s) => (s || "").replace(/\{city\}/g, data.city).replace(/\{rating\}/g, data.rating).replace(/\{reviews\}/g, data.reviews);
+
+  const businessName = data.name || "העסק שלך";
+  const phoneI = phoneIntl(data.phone);
+  const phoneClean = phoneI.replace(/\+/g, "");
+  const waLink = phoneClean ? `https://wa.me/${phoneClean}` : "#";
+  const mapQ = encodeURIComponent(data.address || businessName);
+
+  const servicesHtml = cfg.services.map(([t, d]) => `<div class="svc"><h3>${t}</h3><p>${fmt(d)}</p></div>`).join("\n");
+  const valueStripHtml = cfg.value_strip.map(([label, num]) => `<div class="vs-cell"><div class="vs-num">${fmt(num)}</div><div class="vs-label">${label}</div></div>`).join("\n");
+
+  return `<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>${businessName}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0A0E1A;--ink-soft:#475569;--ink-mute:#94A3B8;--bg:#FAFAFA;--surface:#FFFFFF;--border:#E5E7EB;--cyan:#06B6D4;--violet:#8B5CF6;--grad:linear-gradient(135deg,#06B6D4 0%,#8B5CF6 100%);}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Heebo',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
+.container{max-width:1100px;margin:0 auto;padding:0 24px;}
+.kw-strip{background:var(--ink);color:white;padding:8px 24px;text-align:center;font-size:12px;}
+.kw-strip strong{color:#67E8F9;font-weight:700;}
+.hero{position:relative;padding:60px 24px 50px;background:radial-gradient(circle at 80% 20%,rgba(139,92,246,0.18) 0%,transparent 50%),radial-gradient(circle at 20% 80%,rgba(6,182,212,0.18) 0%,transparent 50%),linear-gradient(180deg,#FAFAFA 0%,#F0F9FF 100%);overflow:hidden;}
+.hero-inner{max-width:920px;margin:0 auto;text-align:center;position:relative;z-index:1;}
+.kicker{display:inline-block;padding:5px 12px;background:white;border:1px solid var(--border);border-radius:999px;font-size:12px;font-weight:600;color:var(--cyan);margin-bottom:18px;letter-spacing:0.04em;}
+h1{font-size:clamp(28px,5vw,46px);font-weight:900;line-height:1.05;letter-spacing:-0.025em;margin-bottom:6px;color:var(--ink);}
+.h1-2{font-size:clamp(18px,2.6vw,26px);font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:18px;}
+.hero-sub{font-size:15px;color:var(--ink-soft);max-width:520px;margin:0 auto 24px;}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:10px;font-weight:700;font-size:15px;transition:transform 0.2s;}
+.btn-primary{background:var(--ink);color:white;box-shadow:0 10px 24px -8px rgba(10,14,26,0.3);}
+.btn-primary:hover{transform:translateY(-2px);background:var(--cyan);}
+.btn-whatsapp{background:#25D366;color:white;box-shadow:0 10px 24px -8px rgba(37,211,102,0.4);}
+.btn-whatsapp:hover{transform:translateY(-2px);}
+.value-strip{margin-top:40px;display:grid;grid-template-columns:repeat(3,1fr);background:white;border-radius:16px;border:1px solid var(--border);box-shadow:0 16px 32px -16px rgba(15,23,42,0.10);overflow:hidden;}
+.vs-cell{padding:20px 12px;text-align:center;border-left:1px solid var(--border);}
+.vs-cell:first-child{border-left:none;}
+.vs-num{font-size:clamp(22px,3vw,32px);font-weight:900;letter-spacing:-0.02em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.1;}
+.vs-label{font-size:12px;color:var(--ink-soft);margin-top:4px;}
+@media (max-width:560px){.value-strip{grid-template-columns:1fr;}.vs-cell{border-left:none;border-top:1px solid var(--border);}.vs-cell:first-child{border-top:none;}}
+section.block{padding:50px 0;}
+section.block.alt{background:white;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+h2.title{font-size:clamp(22px,3.2vw,32px);font-weight:900;letter-spacing:-0.02em;margin-bottom:10px;text-align:center;}
+h2.title .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.section-sub{text-align:center;font-size:15px;color:var(--ink-soft);max-width:560px;margin:0 auto 32px;}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+@media (max-width:820px){.svc-grid{grid-template-columns:1fr;}}
+.svc{background:white;border:1px solid var(--border);border-radius:14px;padding:22px;transition:transform 0.2s,box-shadow 0.2s;}
+.svc:hover{transform:translateY(-3px);box-shadow:0 14px 28px -12px rgba(15,23,42,0.10);}
+.svc h3{font-size:17px;font-weight:800;margin-bottom:6px;}
+.svc p{color:var(--ink-soft);font-size:14px;line-height:1.6;}
+.photos{display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px;max-width:880px;margin:0 auto;aspect-ratio:3/1.4;}
+@media (max-width:720px){.photos{grid-template-columns:1fr 1fr;aspect-ratio:2/1.4;}.photos > div:first-child{grid-column:span 2;}}
+.photo{border-radius:12px;}
+.photo.p1{background:linear-gradient(135deg,#FECDD3 0%,#FBCFE8 50%,#DDD6FE 100%);}
+.photo.p2{background:linear-gradient(135deg,#BAE6FD 0%,#C7D2FE 100%);}
+.photo.p3{background:linear-gradient(135deg,#FDE68A 0%,#FCA5A5 100%);}
+.photo.p4{background:linear-gradient(135deg,#BBF7D0 0%,#93C5FD 100%);}
+.photo.p5{background:linear-gradient(135deg,#FDBA74 0%,#FBCFE8 100%);}
+.photos-note{text-align:center;color:var(--ink-mute);font-size:12px;margin-top:14px;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch;}
+@media (max-width:820px){.contact-grid{grid-template-columns:1fr;}}
+.contact-card{background:white;border:1px solid var(--border);border-radius:14px;padding:24px;}
+.contact-card h3{font-size:19px;font-weight:800;margin-bottom:12px;}
+.contact-row{display:flex;gap:10px;align-items:start;padding:8px 0;font-size:14px;}
+.map-wrap{border-radius:14px;overflow:hidden;border:1px solid var(--border);aspect-ratio:1/1;max-height:320px;}
+.map-wrap iframe{width:100%;height:100%;border:0;}
+.final-cta{background:linear-gradient(135deg,#0A0E1A 0%,#131826 50%,#0F172A 100%);color:white;padding:60px 24px;text-align:center;position:relative;overflow:hidden;isolation:isolate;}
+.final-cta::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 30%,rgba(6,182,212,0.30) 0%,transparent 60%),radial-gradient(circle at 30% 70%,rgba(139,92,246,0.30) 0%,transparent 60%);z-index:-1;}
+.final-cta h2{font-size:clamp(24px,3.6vw,36px);font-weight:900;margin-bottom:12px;letter-spacing:-0.02em;}
+.final-cta p{color:#CBD5E1;font-size:16px;margin-bottom:24px;max-width:520px;margin-inline:auto;}
+.cta-row.center{justify-content:center;}
+.cta-row.center .btn-ghost{background:rgba(255,255,255,0.05);color:white;border:1px solid rgba(255,255,255,0.2);}
+footer.foot{background:#0B1220;color:#94A3B8;padding:24px;text-align:center;font-size:12px;}
+footer.foot a{color:white;font-weight:600;}
+</style>
+</head>
+<body>
+
+<div class="kw-strip">
+  <strong>זוהי תצוגה מקדימה</strong> שבונה את עצמה תוך שאתם כותבים · <a href="/">לעלות לאוויר ב-990 ₪</a>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker">${fmt(cfg.hero_kicker)}</div>
+    <h1>${businessName}</h1>
+    <div class="h1-2">${cfg.hero_headline_2}</div>
+    <p class="hero-sub">${cfg.hero_sub}</p>
+    <div class="cta-row">
+      <a href="tel:${phoneI}" class="btn btn-primary">${cfg.primary_cta}</a>
+      <a href="${waLink}" class="btn btn-whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+    <div class="value-strip">${valueStripHtml}</div>
+  </div>
+</header>
+
+<section class="block">
+  <div class="container">
+    <h2 class="title">${cfg.services_title}</h2>
+    <p class="section-sub">מה שכבר עושים, מוצג כמו שצריך.</p>
+    <div class="svc-grid">${servicesHtml}</div>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="container">
+    <h2 class="title">תמונות <span class="grad">מ-${businessName}</span></h2>
+    <p class="section-sub">כאן יופיעו התמונות שלכם.</p>
+    <div class="photos"><div class="photo p1"></div><div class="photo p2"></div><div class="photo p3"></div><div class="photo p4"></div><div class="photo p5"></div></div>
+    <p class="photos-note">↑ הצבעים כאן הם מילוי זמני — האתר האמיתי יציג את התמונות שלכם.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2 class="title">איפה <span class="grad">מוצאים אותנו</span></h2>
+    <p class="section-sub">${data.city}</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>פרטי יצירת קשר</h3>
+        <div class="contact-row"><strong>טלפון:</strong>&nbsp;<a href="tel:${phoneI}">${data.phone}</a></div>
+        <div class="contact-row"><strong>כתובת:</strong>&nbsp;${data.address}</div>
+        <div class="contact-row"><strong>בגוגל:</strong>&nbsp;${data.rating} ★ · ${data.reviews} ביקורות</div>
+      </div>
+      <div class="map-wrap"><iframe src="https://www.google.com/maps?q=${mapQ}&output=embed" allowfullscreen loading="lazy"></iframe></div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <h2>מוצא חן בעיניך?</h2>
+  <p>בוא נעלה את האתר לאוויר עם דומיין משלכם תוך 24 שעות. 990 ₪ הקמה חד-פעמית.</p>
+  <div class="cta-row center">
+    <a href="https://kitewebs.com/#contact" class="btn btn-primary" target="_top">בואו נתחיל</a>
+  </div>
+</section>
+
+<footer class="foot">תצוגה מקדימה שנבנתה תוך כדי כתיבה · <a href="https://kitewebs.com">KiteWebs</a></footer>
+
+</body>
+</html>`;
+}
+
+/* ===== STATE ===== */
+function readForm() {
+  return {
+    name: document.getElementById('f-name').value.trim() || "העסק שלך",
+    niche: document.getElementById('f-niche').value,
+    city: document.getElementById('f-city').value.trim() || "ישראל",
+    address: document.getElementById('f-address').value.trim(),
+    phone: document.getElementById('f-phone').value.trim() || "050-000-0000",
+    rating: document.getElementById('f-rating').value || "5.0",
+    reviews: document.getElementById('f-reviews').value || "0",
+  };
+}
+
+function update() {
+  const data = readForm();
+  const html = renderPreview(data);
+  document.getElementById('preview-frame').srcdoc = html;
+  const slug = (data.name || "").replace(/[^א-תA-Za-z0-9]+/g, "-").replace(/^-+|-+$/g, "").substring(0, 30).toLowerCase() || "your-site";
+  document.getElementById('browser-url').textContent = `${slug}.kitewebs.com`;
+}
+
+/* ===== URL SHARING ===== */
+function encodeState(data) {
+  const json = JSON.stringify(data);
+  return btoa(unescape(encodeURIComponent(json)));
+}
+function decodeState(b64) {
+  try { return JSON.parse(decodeURIComponent(escape(atob(b64)))); } catch (e) { return null; }
+}
+
+function applyState(state) {
+  if (!state) return;
+  if (state.name !== undefined)    document.getElementById('f-name').value = state.name;
+  if (state.niche !== undefined)   document.getElementById('f-niche').value = state.niche;
+  if (state.city !== undefined)    document.getElementById('f-city').value = state.city;
+  if (state.address !== undefined) document.getElementById('f-address').value = state.address;
+  if (state.phone !== undefined)   document.getElementById('f-phone').value = state.phone;
+  if (state.rating !== undefined)  document.getElementById('f-rating').value = state.rating;
+  if (state.reviews !== undefined) document.getElementById('f-reviews').value = state.reviews;
+}
+
+/* ===== INIT ===== */
+const params = new URLSearchParams(location.search);
+if (params.has('d')) applyState(decodeState(params.get('d')));
+update();
+
+let debounceTimer;
+document.querySelectorAll('#f-name, #f-niche, #f-city, #f-address, #f-phone, #f-rating, #f-reviews').forEach(el => {
+  el.addEventListener('input', () => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(update, 200);
+  });
+  el.addEventListener('change', update);
+});
+
+document.getElementById('cta-share').addEventListener('click', async () => {
+  const data = readForm();
+  const url = `${location.origin}/try/?d=${encodeState(data)}`;
+  const status = document.getElementById('share-status');
+  try {
+    await navigator.clipboard.writeText(url);
+    status.textContent = "הקישור הועתק לזיכרון ✓";
+  } catch (e) {
+    status.textContent = url;
+    status.style.userSelect = "all";
+  }
+  setTimeout(() => { status.textContent = ""; }, 4000);
+});
+
+document.getElementById('cta-real').addEventListener('click', () => {
+  const data = readForm();
+  const url = `/#contact?biz=${encodeURIComponent(data.name)}&phone=${encodeURIComponent(data.phone)}`;
+  location.href = url;
+});
+</script>
+</body>
+</html>
