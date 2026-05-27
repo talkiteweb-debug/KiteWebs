@@ -864,9 +864,11 @@
       <h3>שלחו בקשה</h3>
       <p class="form-pitch">ספרו לנו על מה אתם עובדים — נחזור מהר.</p>
 
-      <form id="contactForm" name="contact-he" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="contact-he" />
-        <p class="form-honeypot"><label>אל תמלא: <input name="bot-field" tabindex="-1"></label></p>
+      <form id="contactForm" name="contact-he" method="POST" action="https://formsubmit.co/tal.kiteweb@gmail.com">
+        <input type="hidden" name="_subject" value="ליד חדש מאתר KiteWebs (HE)" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <p class="form-honeypot"><label>אל תמלא: <input name="_honey" tabindex="-1"></label></p>
 
         <div class="form-grid">
           <div class="form-row">
@@ -1014,10 +1016,10 @@
       btn.textContent = 'שולח...';
       const fd = new FormData(form);
       try {
-        const r = await fetch('/', {
+        const r = await fetch('https://formsubmit.co/ajax/tal.kiteweb@gmail.com', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(fd).toString(),
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(Object.fromEntries(fd)),
         });
         if (!r.ok) throw new Error('submit failed');
         card.innerHTML = `<div class="thanks-state"><div class="check-big" aria-hidden="true"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><h4>תודה — קיבלנו את הבקשה</h4><p>נחזור אליכם תוך 24 שעות. בינתיים אפשר לכתוב לנו ב-WhatsApp.</p></div>`;
